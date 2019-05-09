@@ -2,13 +2,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import App from './component/app';
+import ValueRangeInput from './component/valueRangeInput';
 import * as serviceWorker from './serviceWorker';
 
 const root = document.getElementById('root');
-const appElement = <App />;
+const content = (
+  <div className="app__container">
+    <ValueRangeInput />
+  </div>
+);
 
-ReactDOM.render(appElement, root);
+ReactDOM.render(content, root);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

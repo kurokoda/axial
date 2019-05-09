@@ -1,0 +1,65 @@
+input {
+  // Normally I would implement something more dynamic
+  // to avoid removing accessibility, but for the sake
+  // of simplicity, I'm brute forcing this. Please
+  // let me know if you are impacted negatively by this.
+  outline: none;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.min-max {
+  &__button {
+    background-color: #666;
+    border-radius: 10px;
+    color: #fff;
+    height: 30px;
+    width: 240px;
+
+    &:disabled {
+      background-color: #666;
+      color: #333;
+      width: 240px;
+    }
+  }
+
+  &__container {
+    align-items: center;
+    background-color: #333;
+    border-radius: 10px;
+    display: flex;
+    height: 300px;
+    justify-content: center;
+    width: 500px;
+  }
+
+  &__form-container {
+    height: 240px;
+    width: 300px;
+  }
+
+  &__input-component {
+    height: 100px;
+
+    &-textfield {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      height: 30px;
+      width: 300px;
+    }
+
+    &-error {
+      color: red;
+      font-size: 12px;
+      height: 50px;
+    }
+
+    &-label {
+      color: white;
+    }
+  }
+}
