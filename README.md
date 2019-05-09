@@ -44,7 +44,7 @@ This was handled by viewing the component as three seperate areas of concern:
 
 # Development
 
-I have added linting and prettification to the build process, so that every commit and push applies Prettier's code styling and lints the code.
+I have added linting and prettification to the build process, so that every commit and push applies Prettier's code styling, lints the code, and runs the test suites.
 
 ## Available Scripts
 
