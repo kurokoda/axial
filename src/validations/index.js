@@ -2,7 +2,7 @@ export const ALLOWED_CHAR_ERROR =
   "Only numbers, decimal points, and the modifiers 'b', 'k', and 'm' are allowed";
 export const GREATER_THAN_ERROR =
   'Value must be greater than or equal to minimum';
-export const LESS_THAN_ERROR = 'Value must be less than or equal to minimum';
+export const LESS_THAN_ERROR = 'Value must be less than or equal to maximum';
 export const TRAILING_MODIFIER_ERROR =
   "Modifiers 'k', 'm', and 'z' must follow numbers";
 
