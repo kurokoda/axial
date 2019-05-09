@@ -28,6 +28,10 @@ This was handled by viewing the component as three seperate areas of concern:
 
 - Validators: Simple function which accept input and return an error string, if applicable, or null if the input is valid. Validators may be stateful methods belonging to the component itself, or stateless, external utility functions.
 
+# Development
+
+As in all my projects, I have added linting and prettification to the build process, so that every commit and push applies Prettiers code styling and lints the code.
+
 ## Available Scripts
 
 In the project directory, you can run:
