@@ -4,9 +4,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 a Financial Range component with two text inputs, the minimum and maximum value of the range.
 
-## Shortcuts
+## Transforms
 
-Predefined shortcuts should be expanded to larger numbers. (m -> millions, k -> thousands. If a value of '2k' is entered by the user, the value should be expanded to 2000).
+Predefined transforms are expanded to larger numbers.
+
+- b -> millions,
+- m -> millions,
+- k -> thousands.
+
+ex: If a value of '2k' is entered by the user, the value is expanded to 2000.
 
 ## Validation
 
@@ -18,7 +24,9 @@ Predefined shortcuts should be expanded to larger numbers. (m -> millions, k -> 
 
 # Implementation
 
-My goal in designing this c omponent was not only to satisfy the validation requirements included in the spec, but to allow the component to be extensible; flexible enough to handle the addition of any additional validation requirements without modifying the core component.
+## Features
+
+My goal in designing this component was not only to satisfy the validation requirements defined in the spec. I wanted to allow the component to be extensible; flexible enough to handle the addition of any additional validation requirements or value transforms without modifying the core component; any depth of conversion, any type of data normalization. I wanted the freedom to convert the inputs' values to FizzBuzz strings if necessary.
 
 This was handled by viewing the component as three seperate areas of concern:
 
@@ -28,9 +36,15 @@ This was handled by viewing the component as three seperate areas of concern:
 
 - Validators: Simple function which accept input and return an error string, if applicable, or null if the input is valid. Validators may be stateful methods belonging to the component itself, or stateless, external utility functions.
 
+## Improvements
+
+- <b>Error reporting is factually correct, but a little aggressive from a UX perspective.</b><br><br> It would be nice to add some checking on the inputs so that erros wouldn't show until the user has had a chance to fully interact with the component, but I felt that adding that kind of noize (while improving the UX) would complicate the code in a way that would be detrimental to the purpose of the exercise.
+
+- <b>This stated purpose of this component, while simple, is rife with edge cases.</b><br><br> Comma seperation, for example, is forbidden in this implementation. While decimals are handled, the Norweigan/Spanish case of decimals acting as seperators is not. Currency symbols are disallowed as well. All of these things could be easily handled using the transform/validation system, but again, I felt that the addition of further functionality would add unnecessary noise to the exercise.
+
 # Development
 
-As in all my projects, I have added linting and prettification to the build process, so that every commit and push applies Prettiers code styling and lints the code.
+I have added linting and prettification to the build process, so that every commit and push applies Prettier's code styling and lints the code.
 
 ## Available Scripts
 
