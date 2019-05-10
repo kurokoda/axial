@@ -1,10 +1,3 @@
-input {
-  // Normally I would implement something more dynamic
-  // to avoid removing accessibility, but for the sake
-  // of simplicity, I'm brute forcing this. Please
-  // let me know if you are impacted negatively by this.
-  outline: none;
-}
 // Colors
 $white: #fff;
 $primary-very-light: #ddd;
@@ -23,6 +16,14 @@ form {
   flex-direction: column;
 }
 
+input {
+  // Normally I would implement something more dynamic
+  // to avoid removing accessibility, but for the sake
+  // of simplicity, I'm brute forcing this. Please
+  // let me know if you are impacted negatively by this.
+  outline: none;
+}
+
 .min-max {
   &__button {
     background-color: $input-focused;
@@ -34,7 +35,7 @@ form {
     height: 30px;
     text-transform: uppercase;
     transition: background-color $transition-speed, color $transition-speed;
-    width: 240px;
+    width: 180px;
 
     &:disabled {
       background-color: $input-unfocused;
