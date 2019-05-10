@@ -5,6 +5,17 @@ input {
   // let me know if you are impacted negatively by this.
   outline: none;
 }
+// Colors
+$white: #fff;
+$primary-very-light: #ddd;
+$primary: #999;
+$primary-dark: #333;
+$danger: #fc4042;
+$input-focused: #dfb521;
+$input-unfocused: #a8891a;
+
+// Timing
+$transition-speed: 600ms;
 
 form {
   align-items: center;
@@ -14,28 +25,31 @@ form {
 
 .min-max {
   &__button {
-    background-color: #dfb521;
+    background-color: $input-focused;
     border: none;
-    border-radius: 10px;
-    color: #fff;
+    border-radius: 5px;
+    color: $white;
     cursor: pointer;
+    font-weight: bold;
     height: 30px;
-    transition: background-color 600ms, color 300ms;
+    text-transform: uppercase;
+    transition: background-color $transition-speed, color $transition-speed;
     width: 240px;
 
     &:disabled {
-      background-color: #a8891a;
-      color: #333;
+      background-color: $input-unfocused;
+      color: $primary-dark;
       cursor: default;
-      width: 240px;
     }
   }
 
   &__container {
     align-items: center;
-    background-color: #333;
+    background-color: $primary-dark;
+    border: 3px solid $primary;
     border-radius: 10px;
     display: flex;
+    box-shadow: #000 10px 10px 4px;
     height: 340px;
     justify-content: center;
     width: 500px;
@@ -50,25 +64,29 @@ form {
     height: 110px;
 
     &-error {
-      color: #ff0000;
+      color: $danger;
       font-size: 12px;
       height: 50px;
     }
 
     &-label {
-      color: white;
+      color: $primary;
     }
 
     &-textfield {
-      border: 1px solid #ccc;
+      border: 3px solid $primary-very-light;
       border-radius: 5px;
+      background-color: $primary-very-light;
       padding: 10px;
       height: 36px;
       margin: 10px 0 0 0;
+      transition: background-color $transition-speed,
+        border-color $transition-speed;
       width: 300px;
 
       &:focus {
-        border: 3px solid #dfb521;
+        background-color: $white;
+        border: 3px solid $input-focused;
       }
     }
   }
