@@ -9,10 +9,9 @@ import {
 import { trailingModifier as trailingModifierTransform } from '../../transforms';
 
 /**
- * A value range input component
+ * @class ValueRangeInput
  * @description A component which allows the user to input two values to indicate a range.
  * of values. Includes validations and normalization transforms.
- * @class ValueRangeInput
  * @extends {Component}
  */
 class ValueRangeInput extends Component {
@@ -42,12 +41,12 @@ class ValueRangeInput extends Component {
   };
 
   /**
-   * @function applyTransforms
    * @description A method which iteratively applies a list of transform functions.
    * to an object.
+   * @function applyTransforms
+   * @memberof ValueRangeInput
    * @param {String} key
    * @param {String} value
-   * @memberof ValueRangeInput
    * @returns a transformed copy of the incoming value
    */
   applyTransforms = (key, value) => {
@@ -60,11 +59,11 @@ class ValueRangeInput extends Component {
   };
 
   /**
-   * @function applyValidations
    * @description A method which iteratively applies a list of validation functions
    * to an object until an error is returned or the list has been traversed.
-   * @param {String} key
+   * @function applyValidations
    * @memberof ValueRangeInput
+   * @param {String} key
    * @returns a string describing copy of the incoming value
    */
   applyValidations = key => {
@@ -80,12 +79,11 @@ class ValueRangeInput extends Component {
   };
 
   /**
-   * React lifecylke method called once the component is mounted ontro the DOM
-   *
+   * @description React lifecycle method called once the component is mounted ontro the DOM
    * @function componentDidUpdate
+   * @memberof ValueRangeInput
    * @param {*} _prevProps
    * @param {*} prevState
-   * @memberof ValueRangeInput
    */
   componentDidUpdate(_prevProps, prevState) {
     const { maximum, minimum } = this.state;
@@ -103,12 +101,12 @@ class ValueRangeInput extends Component {
   }
 
   /**
-   * @function onChange
    * @description the onChange handler for the two range inputs. Fired when user input is received.
    * Updates the appropriate input based on the 'key' property of the DOM element's dataset. The
    * value's transforms are applied here.
-   * @param {InputEvent} event
+   * @function onChange
    * @memberof ValueRangeInput
+   * @param {InputEvent} event
    */
   onChange = event => {
     const key = event.target.dataset.key;
@@ -122,10 +120,10 @@ class ValueRangeInput extends Component {
   };
 
   /**
-   * @function onSubmit
    * @description the onSubmit handler for the range input form. Fired when the sumbit button is clicked.
-   * @param {SubmitEvent} event
+   * @function onSubmit
    * @memberof ValueRangeInput
+   * @param {SubmitEvent} event
    */
   onSubmit = event => {
     const { maximum, minimum } = this.state;
@@ -138,8 +136,8 @@ class ValueRangeInput extends Component {
 
   /**
    * @function render
-   * @returns {ReactNode}
    * @memberof ValueRangeInput
+   * @returns {ReactNode}
    */
   render() {
     const { maximum, minimum } = this.state;
@@ -192,9 +190,17 @@ class ValueRangeInput extends Component {
     );
   }
 
+  /**
+   * @function render
+   * @memberof ValueRangeInput
+   * @readonly
+   * @returns {Boolean}
+   */
   get hasValidInput() {
     const { maximum, minimum } = this.state;
-    return maximum.value && minimum.value && !maximum.error && !minimum.error;
+    return Boolean(
+      maximum.value && minimum.value && !maximum.error && !minimum.error
+    );
   }
 }
 
