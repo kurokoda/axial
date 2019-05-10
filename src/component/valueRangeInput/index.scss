@@ -14,15 +14,19 @@ form {
 
 .min-max {
   &__button {
-    background-color: #666;
+    background-color: #dfb521;
+    border: none;
     border-radius: 10px;
     color: #fff;
+    cursor: pointer;
     height: 30px;
+    transition: background-color 600ms, color 300ms;
     width: 240px;
 
     &:disabled {
-      background-color: #666;
+      background-color: #a8891a;
       color: #333;
+      cursor: default;
       width: 240px;
     }
   }
@@ -59,9 +63,13 @@ form {
       border: 1px solid #ccc;
       border-radius: 5px;
       padding: 10px;
-      height: 10px;
+      height: 36px;
       margin: 10px 0 0 0;
       width: 300px;
+
+      &:focus {
+        border: 3px solid #dfb521;
+      }
     }
   }
 }
